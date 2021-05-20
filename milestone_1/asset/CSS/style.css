@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .w100{
     width: 100%;
 }
@@ -37,7 +38,7 @@ main{
 
 div.schermata{
     width: 90%;
-    height: 600px;
+    /* height: 600px; */
     position: absolute;
     top: 15px;
     left: 50%;
@@ -47,13 +48,13 @@ div.schermata{
 }
 
 aside.sidebar{
-    width: 30%;
+    width: 35%;
     height: 100%;
     background-color: seagreen;
 }
 
 div.chat{
-    width: 70%;
+    width: 65%;
     height: 100%;
     background-color: salmon;
 }
@@ -80,14 +81,16 @@ div.chat{
         width: 70%;
         display: flex;
         align-items: center;
+        margin-left: 5px;
     }
     .user img{
         width: 60px;
         border-radius: 50%;
     }
-    .user p{
+    p.user-info{
         font-size: 1.3rem;
-        margin: 0 1px 0 5px;
+        font-weight:300;
+        margin-right: 5px;
     }
     .icons {
         width: 30%;
@@ -99,7 +102,7 @@ div.chat{
     /* SIDE BAR : Fixed AVATAR  */
 
     /* SIDE BAR: NOTIFICHE */
-    .notifiche{
+     .notifiche{
         display: flex;
         align-items: center;
         background-color: #8EDAFC;
@@ -124,6 +127,7 @@ div.chat{
     }
     .notifiche-tex p{
         font-size: 1.2rem;
+       
     }
     .notifiche-text a{
         color:#757575;
@@ -133,29 +137,48 @@ div.chat{
 
     /* SIDE-BAR: SEARCH  */
     .c-search-bar{
-       padding: 0.6rem;
+      display: flex;
        background-color: #FAFAFA;
        
     }
     .c-search-bar i {
-        width: 100%;
-       background-color: white;
-       color: #B6B9BB;
-       padding:0.8rem;
-       font-size: 1rem;
+        background-color: white;
+        color: #B6B9BB;
+        padding: 0.8rem 0.8rem 0.8rem 2rem;
+        font-size: 1.5rem;
     }
     .c-search-bar input{
-        width: 80%;
-        border:0;
+        border: 0;
         font-size: 1rem;
-        margin-left: 1.5rem;
-        
+        width: 100%; 
+        padding-left: 1rem;
     }
-    
     /* /SIDE-BAR: SEARCH  */
 
+    /* SIDE-BAR: CONTACTS  */
 
-
+    .contact-section{
+        height: 380px;
+        background-color: #FAFAFA;
+        overflow-y: auto;
+    }
+    .contact{
+        display: flex;
+       padding: 1.4rem 0 0 2rem;
+       margin-top: 2px;
+       background-color: white;
+    }
+    .contact p{
+        font-size: 1.35rem;
+        padding-left: 10px;
+        font-weight:300;
+    }
+    .contact img{
+        width: 70px;
+        border-radius: 50%;
+    }
+    
+    /* /SIDE-BAR: CONTACTS  */
 
 
 /* /SIDE BAR  */
@@ -170,7 +193,7 @@ div.chat{
 div.user{
     width: 80%;
 }
-.user p{
+.user-info{
     font-size: 1rem;
     margin: 0 1px 0 5px;
     }
