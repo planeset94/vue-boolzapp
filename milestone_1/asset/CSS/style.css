@@ -9,7 +9,9 @@
     display: flex;
     flex-direction: column;
 }
-
+.altezza{
+    height: 500px;
+}
 .w100{
     width: 100%;
 }
@@ -38,7 +40,6 @@ main{
 
 div.schermata{
     width: 90%;
-    /* height: 600px; */
     position: absolute;
     top: 15px;
     left: 50%;
@@ -68,20 +69,17 @@ div.chat{
         /* Altezza=header height  - position-top della schermata  */
         height: calc(100px - 15px);
         background-color: #EAEAEA;
-    }
-
-    /* SIDE BAR : Fixed AVATAR  */
-    .fixed-avatar, .selected-contact{
         padding: 0.5rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    div.user{
-        
+
+    /* SIDE BAR : Fixed AVATAR  */
+     div.user{
         display: flex;
         align-items: center;
-        margin-left: 5px;
+        margin-left: 8px;
     }
     .user img{
         width: 60px;
@@ -106,15 +104,15 @@ div.chat{
         display: flex;
         align-items: center;
         background-color: #8EDAFC;
-        padding:1rem;
+        padding:0 2rem;
+        height: 20%;
     }
     div.bell{
-        width: 15%;
         background-color: #F2FBFF;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding:1rem;
+        padding: 1.2rem;
         border-radius: 50%;
     }
     .bell i{
@@ -140,6 +138,7 @@ div.chat{
       display: flex;
        background-color: #FAFAFA;
        align-items: center;
+       height: 10%;
        
     }
     .c-search-bar i {
@@ -160,7 +159,7 @@ div.chat{
     /* SIDE-BAR: CONTACTS  */
 
     .contact-section{
-        height: 380px;
+        height: 70%;
         background-color: #FAFAFA;
         overflow-y: auto;
     }
@@ -186,8 +185,6 @@ div.chat{
 /* /SIDE BAR  */
  
     /* SCHERMATA : SELECTED - CONTACT  */
-
-  
     .selected-info{
         margin-left: 5px;
     }
@@ -196,7 +193,26 @@ div.chat{
         font-size: 0.9rem;
         padding-top: 0.5rem;
     }
+    /* /SCHERMATA : SELECTED - CONTACT  */
+
+    .main-chat{
+        height: 90%;
+    }
   
+    .text-message{
+        height: 10%;
+        display: flex;
+        justify-content: space-between;
+        background-color: grey;
+       
+    }
+
+
+
+
+
+
+
 
 
 
