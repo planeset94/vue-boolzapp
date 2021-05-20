@@ -107,7 +107,7 @@ div.chat{
     }
     div.bell{
         width: 15%;
-        background-color: white;
+        background-color: #F2FBFF;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -129,12 +129,30 @@ div.chat{
         color:#757575;
         font-size: 0.8rem;
     }
-
     /* /SIDE BAR: NOTIFICHE */
 
-
-
-
+    /* SIDE-BAR: SEARCH  */
+    .c-search-bar{
+       padding: 0.6rem;
+       background-color: #FAFAFA;
+       
+    }
+    .c-search-bar i {
+        width: 100%;
+       background-color: white;
+       color: #B6B9BB;
+       padding:0.8rem;
+       font-size: 1rem;
+    }
+    .c-search-bar input{
+        width: 80%;
+        border:0;
+        font-size: 1rem;
+        margin-left: 1.5rem;
+        
+    }
+    
+    /* /SIDE-BAR: SEARCH  */
 
 
 
