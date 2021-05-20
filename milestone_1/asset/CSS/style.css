@@ -3,12 +3,29 @@
     margin:0;
     padding: 0;
 }
+
+/* UTILITY CLASS  */
+.d-flex-col{
+    display: flex;
+    flex-direction: column;
+}
+.w100{
+    width: 100%;
+}
+
+
+
+/* /UTILITY CLASS  */
+
+
+/* SKELETON STYLE  */
 body{
     position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 header{
     width: 100%;
-    height: 5rem;
+    height: 100px;
     background-color:#009688;
 }
 
@@ -19,11 +36,10 @@ main{
 }
 
 div.schermata{
-    width: 80%;
-    height: 500px;
-    background-color: rgb(143, 172, 211);
+    width: 90%;
+    height: 600px;
     position: absolute;
-    top: 2%;
+    top: 15px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -31,13 +47,129 @@ div.schermata{
 }
 
 aside.sidebar{
-width: 30%;
-height: 100%;
-background-color: seagreen;
+    width: 30%;
+    height: 100%;
+    background-color: seagreen;
 }
 
 div.chat{
     width: 70%;
     height: 100%;
     background-color: salmon;
+}
+
+/* /SKELETON STYLE  */
+
+ /* SIDE BAR  */
+
+    .fixed-avatar, .contact-selected{
+        width: 100%;
+        /* Altezza=header height  - position-top della schermata  */
+        height: calc(100px - 15px);
+        background-color: #EAEAEA;
+    }
+
+    /* SIDE BAR : Fixed AVATAR  */
+    .fixed-avatar{
+        padding: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    div.user{
+        width: 70%;
+        display: flex;
+        align-items: center;
+    }
+    .user img{
+        width: 60px;
+        border-radius: 50%;
+    }
+    .user p{
+        font-size: 1.3rem;
+        margin: 0 1px 0 5px;
+    }
+    .icons {
+        width: 30%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.3rem;
+        color: #B1B1B1;
+    }
+    /* SIDE BAR : Fixed AVATAR  */
+
+    /* SIDE BAR: NOTIFICHE */
+    .notifiche{
+        display: flex;
+        align-items: center;
+        background-color: #8EDAFC;
+        padding:1rem;
+    }
+    div.bell{
+        width: 15%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding:1rem;
+        border-radius: 50%;
+    }
+    .bell i{
+        font-size: 1.4rem;
+        color: #8EDAFC;   
+    }
+    .notifiche-text{
+        width: 85%;
+        margin-left: 0.5rem;
+    }
+    .notifiche-tex p{
+        font-size: 1.2rem;
+    }
+    .notifiche-text a{
+        color:#757575;
+        font-size: 0.8rem;
+    }
+
+    /* /SIDE BAR: NOTIFICHE */
+
+
+
+
+
+
+
+
+
+/* /SIDE BAR  */
+
+
+
+
+
+
+
+@media screen and (max-width:946px){
+div.user{
+    width: 80%;
+}
+.user p{
+    font-size: 1rem;
+    margin: 0 1px 0 5px;
+    }
+.icons{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.icons i{
+    font-size: 13px;
+}
+.icons i:nth-of-type(2){
+    margin:2px 0;
+}
+
+
+    
 }
