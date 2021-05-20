@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+body{
+    position: relative;
+}
+header{
+    width: 100%;
+    height: 5rem;
+    background-color:#009688;
+}
+
+main{
+    width: 100%;
+    height: calc(100vh - 5rem);
+    background-color: #DCDBD2;
+}
+
+div.schermata{
+    width: 80%;
+    height: 500px;
+    background-color: rgb(143, 172, 211);
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    
+}
+
+aside.sidebar{
+width: 30%;
+height: 100%;
+background-color: seagreen;
+}
+
+div.chat{
+    width: 70%;
+    height: 100%;
+    background-color: salmon;
+}
