@@ -10,7 +10,7 @@
     flex-direction: column;
 }
 .altezza{
-    height: 500px;
+    height: 550px;
 }
 .w100{
     width: 100%;
@@ -51,13 +51,11 @@ div.schermata{
 aside.sidebar{
     width: 35%;
     height: 100%;
-    background-color: seagreen;
 }
 
 div.chat{
     width: 65%;
     height: 100%;
-    background-color: salmon;
 }
 
 /* /SKELETON STYLE  */
@@ -196,15 +194,33 @@ div.chat{
     /* /SCHERMATA : SELECTED - CONTACT  */
 
     .main-chat{
-        height: 90%;
+        height: 85%;
+        background-image: url(../IMG/mine.jpg);
+        overflow-y: auto;
     }
   
     .text-message{
-        height: 10%;
+        height: 15%;
         display: flex;
         justify-content: space-between;
-        background-color: grey;
-       
+        align-items: center;
+        background-color: #F3EEEA;
+        padding:0.5rem 1rem;
+    }
+
+    .text-message i{
+        font-size: 2rem;
+        padding:0 1rem;
+        color: #6B7376;
+    }
+
+    .text-message input{
+        height: 100%;
+        font-size: 1rem;
+        padding: 0 1rem;
+        border-radius: 10px;
+        border:0;
+        flex-basis: 80%;
     }
 
 
