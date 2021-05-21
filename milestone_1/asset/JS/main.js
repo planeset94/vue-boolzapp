@@ -10,12 +10,16 @@ const app = new Vue(
                 name: 'Andrea',
                 avatar: '_me',
                 visible: true,
-
-
             },
 
 
             counter: 0,
+
+            calendario: [
+                new Date().getDate() + "/" + (new Date().getMonth() + 1) + "/" + new Date().getYear(),
+                new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds(),
+            ],
+
 
             contacts: [
                 {
@@ -121,5 +125,10 @@ const app = new Vue(
 
     }
 );
+
+
+
+
+
 
 

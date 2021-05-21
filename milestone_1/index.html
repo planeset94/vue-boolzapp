@@ -83,7 +83,8 @@
                         <img :src="'./asset/IMG/avatar' +contacts[counter].avatar+ '.jpg'" class="user-avatar" alt="">
                         <div class="selected-info">
                             <p class="user-info">{{contacts[counter].name}}</p>
-                            <p class="time">Ultimo accesso</p>
+                            <p class="time">Ultimo accesso in data {{calendario[0]+ " alle ore " + calendario[1]}}
+                            </p>
                         </div>
                     </div>
 
@@ -95,6 +96,24 @@
                 </div>
                 <div class="altezza">
                     <div class="main-chat">
+
+
+                        <div class="inviati" v-for="message in contacts[counter].messages"
+                            v-if="message.status=='sent'">
+                            <p class="mess">{{message.text}}</p>
+                            <p class="time">{{message.date}}</p>
+                        </div>
+
+
+                        <div class="ricevuti" v-else>
+
+                            <p class="mess">{{message.text}}</p>
+                            <p class="time">{{message.date}}</p>
+
+
+
+                        </div>
+
 
 
 
