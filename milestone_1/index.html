@@ -19,7 +19,7 @@
     <!-- /header site  -->
 
     <!-- main site  -->
-    <main>
+    <main id="root">
         <!-- Schermata= sidebar + chat  -->
         <div class="schermata">
             <aside class="sidebar d-flex-col">
@@ -28,8 +28,8 @@
                 <div class="fixed-avatar pl-1 w100">
 
                     <div class="user">
-                        <img src="./asset/IMG/avatar_io.jpg" class="user-avatar" alt="">
-                        <p class="user-info">Nome Utente</p>
+                        <img :src=" './asset/IMG/avatar'+me.avatar+'.jpg' " class="user-avatar" alt="">
+                        <p class="user-info">{{me.name}}</p>
                     </div>
 
                     <div class="icons">
@@ -62,11 +62,12 @@
                     <!-- /Container-Search BAR  -->
 
                     <!-- CONTATTI  -->
-                    <div id="root" class="contact-section pl-1 w100">
+                    <div class="contact-section pl-1 w100">
 
                         <div class="contact" v-for="(contact, index) in contacts" @click="checkCounter(index)">
-                            <img v-bind:src="'./asset/IMG/avatar' +contact.avatar+ '.jpg'" class="user-avatar" alt="">
+                            <img v-bind:src="'./asset/IMG/avatar'+contact.avatar+ '.jpg'" class="user-avatar" alt="">
                             <p v-text="contact.name" class="user-info"></p>
+
                         </div>
 
                     </div>
@@ -79,7 +80,7 @@
                 <div class="selected-contact w100">
 
                     <div class="user">
-                        <img src="./asset/IMG/avatar_5.jpg" class="user-avatar" alt="">
+                        <img :src="'./asset/IMG/avatar' +contacts[counter].avatar+ '.jpg'" class="user-avatar" alt="">
                         <div class="selected-info">
                             <p class="user-info">{{contacts[counter].name}}</p>
                             <p class="time">Ultimo accesso</p>

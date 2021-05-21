@@ -5,14 +5,14 @@ const app = new Vue(
 
         data: {
 
-            // me: {
+            me: {
 
-            //     name: 'Andrea',
-            //     avatar: '_io',
-            //     visible: true,
+                name: 'Andrea',
+                avatar: '_me',
+                visible: true,
 
 
-            // },
+            },
 
 
             counter: 0,
@@ -111,18 +111,15 @@ const app = new Vue(
         methods: {
 
             checkCounter(index) {
-                return this.counter = index
+                this.counter = index;
+                console.log(index);
             },
 
 
 
         },
 
-
-
-
-
-
-
     }
-)
+);
+
+
