@@ -29,7 +29,7 @@
 
                     <div class="user">
                         <img src="./asset/IMG/avatar_io.jpg" class="user-avatar" alt="">
-                        <p class="user-info">Nome utente</p>
+                        <p class="user-info">Nome Utente</p>
                     </div>
 
                     <div class="icons">
@@ -62,11 +62,11 @@
                     <!-- /Container-Search BAR  -->
 
                     <!-- CONTATTI  -->
-                    <div class="contact-section pl-1 w100">
+                    <div id="root" class="contact-section pl-1 w100">
 
-                        <div class="contact">
-                            <img src="./asset/IMG/avatar_5.jpg" class="user-avatar" alt="">
-                            <p class="user-info">Nome utente</p>
+                        <div class="contact" v-for="(contact, index) in contacts" @click="checkCounter(index)">
+                            <img v-bind:src="'./asset/IMG/avatar' +contact.avatar+ '.jpg'" class="user-avatar" alt="">
+                            <p v-text="contact.name" class="user-info"></p>
                         </div>
 
                     </div>
@@ -81,7 +81,7 @@
                     <div class="user">
                         <img src="./asset/IMG/avatar_5.jpg" class="user-avatar" alt="">
                         <div class="selected-info">
-                            <p class="user-info">Nome </p>
+                            <p class="user-info">{{contacts[checkCounter].name}}</p>
                             <p class="time">Ultimo accesso</p>
                         </div>
                     </div>
@@ -145,8 +145,8 @@
 
 
 
-
-
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="./asset/JS/main.js"></script>
 </body>
 
 </html>
