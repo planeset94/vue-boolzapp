@@ -1,0 +1,291 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+/* UTILITY CLASS  */
+.d-flex-col{
+    display: flex;
+    flex-direction: column;
+}
+.altezza{
+    height: 500px;
+}
+.w100{
+    width: 100%;
+}
+
+
+
+/* /UTILITY CLASS  */
+
+
+/* SKELETON STYLE  */
+body{
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+header{
+    width: 100%;
+    height: 100px;
+    /* background-color:#009688; */
+    background-image: linear-gradient(to bottom, #009688 0px, #009688 100px, #d3d3d3 100px, #d3d3d3 100%);
+}
+
+main{
+    width: 100%;
+    height: calc(100vh - 5rem);
+    background-color: #DCDBD2;
+}
+
+div.schermata{
+    width: 90%;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    
+}
+
+aside.sidebar{
+    width: 35%;
+    height: 100%;
+}
+
+div.chat{
+    width: 65%;
+    height: 100%;
+}
+
+/* /SKELETON STYLE  */
+
+ /* SIDE BAR  */
+
+    .fixed-avatar, .selected-contact{
+        width: 100%;
+        /* Altezza=header height  - position-top della schermata  */
+        height: calc(100px - 15px);
+        background-color: #EAEAEA;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* SIDE BAR : Fixed AVATAR  */
+     div.user{
+        display: flex;
+        align-items: center;
+        margin-left: 8px;
+    }
+    .user img{
+        width: 60px;
+        border-radius: 50%;
+    }
+    p.user-info{
+        font-size: 1.3rem;
+        font-weight:300;
+        margin-right: 5px;
+    }
+    .icons {
+        width: 120px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.8rem;
+        color: #B1B1B1;
+    }
+    /* SIDE BAR : Fixed AVATAR  */
+
+    /* SIDE BAR: NOTIFICHE */
+     .notifiche{
+        display: flex;
+        align-items: center;
+        background-color: #8EDAFC;
+        padding:0 2rem;
+        height: 20%;
+    }
+    div.bell{
+        background-color: #F2FBFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.2rem;
+        border-radius: 50%;
+    }
+    .bell i{
+        font-size: 1.4rem;
+        color: #8EDAFC;   
+    }
+    .notifiche-text{
+        width: 85%;
+        margin-left: 0.5rem;
+    }
+    .notifiche-tex p{
+        font-size: 1.2rem;
+       
+    }
+    .notifiche-text a{
+        color:#757575;
+        font-size: 0.8rem;
+    }
+    /* /SIDE BAR: NOTIFICHE */
+
+    /* SIDE-BAR: SEARCH  */
+    .c-search-bar{
+      display: flex;
+       background-color: #FAFAFA;
+       align-items: center;
+       height: 10%;
+       
+    }
+    .c-search-bar i {
+        background-color: white;
+        color: #B6B9BB;
+        padding: 0.8rem 0.8rem 0.8rem 2rem;
+        font-size: 1.3rem;
+    }
+    .c-search-bar input{
+        height: 1.5rem;
+        border: 0;
+        font-size: 1rem;
+        width: 100%; 
+        padding-left: 1rem;
+    }
+    /* /SIDE-BAR: SEARCH  */
+
+    /* SIDE-BAR: CONTACTS  */
+
+    .contact-section{
+        height: 70%;
+        background-color: #FAFAFA;
+        overflow-y: auto;
+    }
+    .contact{
+        display: flex;
+       padding: 12px 0 12px 2rem;
+       margin-top: 2px;
+       background-color: white;
+    }
+    .contact p{
+        font-size: 1.35rem;
+        padding-left: 15px;
+        font-weight:300;
+    }
+    .contact img{
+        width: 70px;
+        border-radius: 50%;
+    }
+    
+    /* /SIDE-BAR: CONTACTS  */
+
+
+/* /SIDE BAR  */
+ 
+    /* SCHERMATA : SELECTED - CONTACT  */
+    .selected-info{
+        margin-left: 5px;
+    }
+    .selected-contact .time{
+        color:#757575;
+        font-size: 0.9rem;
+        padding-top: 0.5rem;
+    }
+    /* /SCHERMATA : SELECTED - CONTACT  */
+
+    .main-chat{
+        height: 85%;
+        background-image: url(../IMG/mine.jpg);
+        overflow-y: auto;
+    }
+  
+    .text-message{
+        height: 15%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #F3EEEA;
+        padding:0.5rem 1rem;
+    }
+
+    .text-message i{
+        font-size: 2rem;
+        padding:0 1rem;
+        color: #6B7376;
+    }
+
+    .text-message input{
+        height: 100%;
+        font-size: 1rem;
+        padding: 0 1rem;
+        border-radius: 10px;
+        border:0;
+        flex-basis: 80%;
+    }
+
+.main-chat{
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    align-items: flex-start;
+}
+.main-chat .time{
+    font-size: 0.5rem;
+    text-align: right;
+    padding-top: 5px;
+    margin-left: 3rem;
+    color: #B8B9C0;
+}
+.inviati, .ricevuti{
+padding:1rem;
+border-radius: 20px;
+margin-top: 1rem;
+}
+
+.inviati{
+background-color: #d5f9ba;
+margin-left: auto;
+margin-right: 3rem;
+}
+
+
+.ricevuti{
+    background-color: white;
+    margin-left: 3rem;
+    
+}
+
+
+
+
+
+
+
+@media screen and (max-width:946px){
+div.user{
+    width: 80%;
+}
+.user-info{
+    font-size: 1rem;
+    margin: 0 1px 0 5px;
+    }
+.fixed-avatar .icons{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.fixed-avatar  .icons i{
+    font-size: 13px;
+}
+.fixed-avatar .icons i:nth-of-type(2){
+    margin:2px 0;
+}
+
+
+    
+}
