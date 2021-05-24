@@ -116,13 +116,23 @@ const app = new Vue(
 
             checkCounter(index) {
                 this.counter = index;
-                console.log(index);
+                // console.log(index);
             },
+
+
+            lastDate(counter) {
+                contacts[counter].messages.date.forEach(element => {
+
+                });
+
+
+            },
+
 
 
             addMessage() {
 
-            }
+            },
 
 
 

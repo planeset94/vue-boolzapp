@@ -116,13 +116,23 @@ const app = new Vue(
 
             checkCounter(index) {
                 this.counter = index;
-                console.log(index);
+                // console.log(index);
             },
+
+
+            lastDate() {
+
+
+
+
+
+            },
+
 
 
             addMessage() {
 
-            }
+            },
 
 
 
