@@ -257,8 +257,11 @@ margin-right: 3rem;
     margin-left: 3rem;
     
 }
-
-
+/* HOVER SUI CONTATTI  */
+.contact:hover{
+    background-color: #E9EBEB;
+}
+/* /HOVER SUI CONTATTI  */
 
 
 
