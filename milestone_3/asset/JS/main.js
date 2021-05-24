@@ -15,6 +15,7 @@ const app = new Vue(
 
             counter: 0,
             newMessage: "",
+            replyMessage: "Ok",
 
             calendario: [
                 new Date().getDate() + "/" + (new Date().getMonth() + 1) + "/" + new Date().getYear(),
@@ -90,7 +91,7 @@ const app = new Vue(
                     ],
                 },
                 {
-                    name: 'Luisa',
+                    name: 'Luis',
                     avatar: '_4',
                     visible: true,
                     messages: [
@@ -121,44 +122,47 @@ const app = new Vue(
 
 
 
-            addMessage(counter) {
+            addMessage: function (counter) {
                 if (this.newMessage !== '') {
                     let day = new Date().getDate() + "/" + (new Date().getMonth() + 1) + "/" + new Date().getFullYear()
                     let hour = new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
-                    //  new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds(),
-                    let obj = {
+
+                    let send = {
 
                         date: day + "  " + hour,
                         text: this.newMessage,
                         status: 'sent'
                     }
-                    console.log(obj);
 
+                    let answ = {
 
-                    this.contacts[counter].messages.push(obj)
-                    console.log(this.contacts)
+                        date: day + "  " + hour,
+                        text: this.replyMessage,
+                        status: 'received'
+                    }
 
-
-
-
-
+                    console.log(send);
+                    console.log(answ);
+                    this.contacts[counter].messages.push(send)
+                    // console.log(this.contacts)
                     this.newMessage = ""
+
+                    // AGGIUNGO LA RISPOSTA DOPO UN SECONDO
+                    let v = this
+                    setTimeout(function () {
+                        v.contacts[counter].messages.push(answ)
+
+                    }, 1000);
+
                 }
-
-
-
-
-
-
-
             },
 
-
-
-
-
+        },
+        mounted() {
+            this.addMessage(counter)
 
         },
+
 
     }
 );
