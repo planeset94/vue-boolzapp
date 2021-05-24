@@ -10,7 +10,7 @@
     flex-direction: column;
 }
 .altezza{
-    height: 550px;
+    height: calc(100vh - 120px);
 }
 .w100{
     width: 100%;
@@ -263,6 +263,7 @@ margin-right: 3rem;
 
 .not-visible{
     display: none;
+
 }
 
 

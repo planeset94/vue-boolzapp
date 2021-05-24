@@ -25,7 +25,7 @@ const app = new Vue(
 
             contacts: [
                 {
-                    name: 'Michele',
+                    name: 'Matteo',
                     avatar: '_1',
                     visible: true,
                     messages: [
@@ -47,7 +47,7 @@ const app = new Vue(
                     ],
                 },
                 {
-                    name: 'Fabio',
+                    name: 'Gianbi',
                     avatar: '_2',
                     visible: true,
                     messages: [
@@ -70,7 +70,7 @@ const app = new Vue(
                 },
 
                 {
-                    name: 'Samuele',
+                    name: 'Marco',
                     avatar: '_3',
                     visible: true,
                     messages: [
@@ -92,7 +92,7 @@ const app = new Vue(
                     ],
                 },
                 {
-                    name: 'Luis',
+                    name: 'Liccia',
                     avatar: '_4',
                     visible: true,
                     messages: [
