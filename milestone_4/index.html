@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="../milestone_4/asset/CSS/style.css">
+    <title>Boolzapp 1</title>
+</head>
+
+<body>
+    <!-- header site  -->
+    <header></header>
+    <!-- /header site  -->
+
+    <!-- main site  -->
+    <main id="root">
+        <!-- Schermata= sidebar + chat  -->
+        <div class="schermata">
+            <aside class="sidebar d-flex-col">
+
+                <!-- Avatar : IO  -->
+                <div class="fixed-avatar pl-1 w100">
+
+                    <div class="user">
+                        <img :src=" './asset/IMG/avatar'+me.avatar+'.jpg' " class="user-avatar" alt="">
+                        <p class="user-info">{{me.name}}</p>
+                    </div>
+
+                    <div class="icons">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <!-- /Avatar : IO  -->
+                <div class="altezza">
+                    <!-- Kill notification  -->
+                    <div class="notifiche pl-1 w100">
+                        <div class="bell">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <div class="notifiche-text">
+                            <p>Ricevi notifiche di nuovi messaggi</p>
+                            <a href="#">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+                    <!-- /Kill notification  -->
+
+                    <!-- Container-Search BAR  -->
+                    <div class="c-search-bar pl-1 w100">
+
+                        <i class="fas fa-search"> </i>
+                        <input type="text" v-model="userSearch" placeholder="Cerca o inizia una nuova chat">
+
+                    </div>
+                    <!-- /Container-Search BAR  -->
+
+                    <!-- CONTATTI  -->
+                    <div class="contact-section pl-1 w100">
+
+                        <div class="contact" v-for="(contact, index) in contacts"
+                            :class="(contact.name.toUpperCase().includes(userSearch.toUpperCase()))? '' : 'not-visible' "
+                            @click="checkCounter(index)">
+                            <img v-bind:src="'./asset/IMG/avatar'+contact.avatar+ '.jpg'" class="user-avatar" alt="">
+                            <p v-text="contact.name" class="user-info"></p>
+
+                        </div>
+
+                    </div>
+                    <!-- /CONTATTI  -->
+                </div>
+            </aside>
+
+
+            <div class="chat">
+                <div class="selected-contact w100">
+
+                    <div class="user">
+                        <img :src="'./asset/IMG/avatar' +contacts[counter].avatar+ '.jpg'" class="user-avatar" alt="">
+                        <div class="selected-info">
+                            <p class="user-info">{{contacts[counter].name}}</p>
+                            <p class="time">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="icons">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <div class="altezza">
+                    <!-- CONVERSAZIONI UTENTI  -->
+                    <div class="main-chat">
+
+                        <div :class="(message.status=='sent') ? 'inviati' : 'ricevuti' "
+                            v-for="message in contacts[counter].messages">
+                            <p class="mess">{{message.text}}</p>
+                            <p class="time">{{message.date}}</p>
+                        </div>
+
+                    </div>
+
+                    <!-- /CONVERSAZIONI UTENTI  -->
+
+                    <!-- SCRIVI UN MESSAGGIO` -->
+                    <div class="text-message">
+                        <i class="far fa-smile"></i>
+                        <input type="text" v-model="newMessage" @keyup.enter="addMessage(counter)"
+                            placeholder="Scrivi un messaggio">
+                        <i class="fas fa-microphone"></i>
+
+                    </div>
+                    <!-- /SCRIVI UN MESSAGGIO` -->
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+    </main>
+
+
+
+    <!-- /main site  -->
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="../milestone_4/asset/JS/main.js"></script>
+</body>
+
+</html>
