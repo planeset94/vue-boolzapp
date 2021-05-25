@@ -101,12 +101,16 @@
                     <div class="main-chat">
 
                         <div :class="(message.status=='sent') ? 'inviati' : 'ricevuti' "
-                            v-for="message in contacts[counter].messages">
+                            v-for="(message, mindex) in contacts[counter].messages">
                             <p class="mess">{{message.text}}</p>
                             <p class="time">{{message.date}}</p>
 
                             <div class="option">
-                                <i class="fas fa-chevron-down"></i>
+                                <i @click="activeMenu(mindex)" class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="drop-menu" :class="dropMenu ? 'visible' : 'not-visible'">
+                                <p>Message info</p>
+                                <p>Delete message</p>
                             </div>
                         </div>
 

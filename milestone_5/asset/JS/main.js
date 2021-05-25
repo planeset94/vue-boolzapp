@@ -17,6 +17,7 @@ const app = new Vue(
             newMessage: "",
             replyMessage: "Ok",
             userSearch: '',
+            dropMenu: false,
 
             contacts: [
                 {
@@ -154,7 +155,17 @@ const app = new Vue(
             },
 
 
+            activeMenu(mindex) {
+                // if (this.dropMenu == false) {
+                //     this.dropMenu = true
 
+                // } else {
+                //     this.dropMenu = false
+                // }
+
+                console.log(this.mindex)
+
+            },
 
 
 

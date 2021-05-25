@@ -15,7 +15,12 @@
 .w100{
     width: 100%;
 }
-
+.not-visible{
+    display: none;
+}
+.visible{
+    display: block;
+}
 
 
 /* /UTILITY CLASS  */
@@ -180,9 +185,7 @@ div.chat{
         width: 70px;
         border-radius: 50%;
     }
-    .not-visible{
-        display: none;
-    }
+ 
     
     
     /* /SIDE-BAR: CONTACTS  */
@@ -239,7 +242,6 @@ div.chat{
     font-size: 0.5rem;
     text-align: right;
     padding-top: 5px;
- 
     color: #B8B9C0;
 }
 .inviati, .ricevuti{
@@ -247,6 +249,7 @@ div.chat{
     border-radius: 20px;
     margin-top: 1rem;
     position: relative;
+   
 }
 
 .inviati{
@@ -270,6 +273,17 @@ div.option{
 }
 .inviati:hover .option, .ricevuti:hover .option{
     display: block;
+}
+.drop-menu{
+    width: 10rem;
+    background-color: white;
+    padding: 1rem;
+    position:absolute;
+    top:30%;
+    right: 4%;
+    text-align: left;
+    box-shadow: 0px 0px 1px 0px;
+    
 }
 
 /* HOVER SUI CONTATTI  */
