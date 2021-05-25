@@ -166,10 +166,11 @@ const app = new Vue(
 
             },
 
-            deleteMessage(counter, mindex) {
-                this.contacts[counter].messages[dropMenu] = []
+            deleteMessage(counter, dropMenu) {
+                console.log(this.contacts[counter].messages[dropMenu]);
 
-
+                let arr = this.contacts[counter].messages[dropMenu]
+                arr = []
 
             },
 
