@@ -17,7 +17,7 @@ const app = new Vue(
             newMessage: "",
             replyMessage: "Ok",
             userSearch: '',
-            dropMenu: false,
+            dropMenu: '',
 
             contacts: [
                 {
@@ -27,7 +27,7 @@ const app = new Vue(
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            text: 'Hai portato a spasso cane?',
+                            text: 'Hai portato a spasso il cane?',
                             status: 'sent'
                         },
                         {
@@ -156,18 +156,22 @@ const app = new Vue(
 
 
             activeMenu(mindex) {
-                // if (this.dropMenu == false) {
-                //     this.dropMenu = true
+                if (this.dropMenu === mindex) {
+                    this.dropMenu = ""
 
-                // } else {
-                //     this.dropMenu = false
-                // }
-
-                console.log(this.mindex)
+                } else {
+                    this.dropMenu = mindex
+                }
+                console.log(this.dropMenu)
 
             },
 
+            deleteMessage(counter, mindex) {
+                this.contacts[counter].messages[dropMenu] = []
 
+
+
+            },
 
 
 

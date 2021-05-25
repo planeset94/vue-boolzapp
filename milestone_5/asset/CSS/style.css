@@ -282,9 +282,15 @@ div.option{
     top:30%;
     right: 4%;
     text-align: left;
-    box-shadow: 0px 0px 1px 0px;
-    
+    box-shadow: 0px 0px 1px 0px; 
+    border-radius: 10px;   
 }
+/* HOVER SUI PARAGRAFI DEL DROP MENU  */
+.delete-msg:hover, .info-msg:hover{
+text-decoration: underline;
+
+}
+
 
 /* HOVER SUI CONTATTI  */
 .contact:hover{

@@ -108,9 +108,9 @@
                             <div class="option">
                                 <i @click="activeMenu(mindex)" class="fas fa-chevron-down"></i>
                             </div>
-                            <div class="drop-menu" :class="dropMenu ? 'visible' : 'not-visible'">
-                                <p>Message info</p>
-                                <p>Delete message</p>
+                            <div class="drop-menu" :class="(dropMenu===mindex) ? 'visible' : 'not-visible'">
+                                <p class="info-msg">Message info</p>
+                                <p @click="deleteMessage(counter,mindex)" class="delete-msg">Delete message</p>
                             </div>
                         </div>
 
