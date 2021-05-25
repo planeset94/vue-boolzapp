@@ -125,8 +125,8 @@ const app = new Vue(
 
             addMessage: function (counter) {
                 if (this.newMessage !== '') {
-                    let day = new Date().getDate() + "/" + (new Date().getMonth() + 1) + "/" + new Date().getFullYear()
-                    let hour = new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
+                    let day = dayjs().format('DD/MM/YYYY')
+                    let hour = dayjs().format('HH:mm:ss')
 
                     let send = {
 
