@@ -18,6 +18,8 @@ const app = new Vue(
             replyMessage: "Ok",
             userSearch: '',
             dropMenu: '',
+            lastTimeOnline: '',
+
 
             contacts: [
                 {
@@ -138,8 +140,8 @@ const app = new Vue(
                         status: 'received'
                     }
 
-                    console.log(send);
-                    console.log(answ);
+                    // console.log(send);
+                    // console.log(answ);
                     this.contacts[counter].messages.push(send)
                     // console.log(this.contacts)
                     this.newMessage = ""
@@ -171,6 +173,27 @@ const app = new Vue(
                 this.contacts[this.counter].messages.splice(mindex, 1);
             },
 
+            changeTime() {
+                let arrMess = this.contacts[this.counter].messages
+                const x = arrMess.filter(element => {
+                    if (element.status === 'received') {
+                        return true
+                    } else {
+                        return false
+                    }
+                });
+                // console.log(x);
+                let arrLeng = x.length
+                // console.log(arrLeng)
+                if (arrLeng !== 0) {
+                    this.lastTimeOnline = x[arrLeng - 1].date
+                } else {
+                    this.lastTimeOnline = '.....'
+                }
+
+                console.log(this.lastTimeOnline);
+
+            },
 
 
 
@@ -186,7 +209,10 @@ const app = new Vue(
 
 
     }
+
+
 );
+
 
 
 

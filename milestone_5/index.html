@@ -66,7 +66,7 @@
 
                         <div class="contact" v-for="(contact, index) in contacts"
                             :class="(contact.name.toUpperCase().includes(userSearch.toUpperCase()))? '' : 'not-visible' "
-                            @click="checkCounter(index)">
+                            @click="checkCounter(index),changeTime()">
                             <img v-bind:src="'./asset/IMG/avatar'+contact.avatar+ '.jpg'" class="user-avatar" alt="">
                             <p v-text="contact.name" class="user-info"></p>
 
@@ -79,14 +79,13 @@
 
 
             <div class="chat">
-                <div class="selected-contact w100">
+                <div id="selected-chat" class="selected-contact w100">
 
                     <div class="user">
                         <img :src="'./asset/IMG/avatar' +contacts[counter].avatar+ '.jpg'" class="user-avatar" alt="">
                         <div class="selected-info">
                             <p class="user-info">{{contacts[counter].name}}</p>
-                            <p class="time">
-                            </p>
+                            <p class="time">{{lastTimeOnline}}</p>
                         </div>
                     </div>
 
@@ -110,7 +109,7 @@
                             </div>
                             <div class="drop-menu" :class="(dropMenu===mindex) ? 'visible' : 'not-visible'">
                                 <p class="info-msg">Message info</p>
-                                <p @click="deleteMessage(mindex)" class="delete-msg">Delete message</p>
+                                <p @click="deleteMessage(mindex),changeTime()" class="delete-msg">Delete message</p>
                             </div>
                         </div>
 
@@ -121,7 +120,7 @@
                     <!-- SCRIVI UN MESSAGGIO` -->
                     <div class="text-message">
                         <i class="far fa-smile"></i>
-                        <input type="text" v-model="newMessage" @keyup.enter="addMessage(counter)"
+                        <input type="text" v-model="newMessage" @keyup.enter="addMessage(counter), changeTime()"
                             placeholder="Scrivi un messaggio">
                         <i class="fas fa-microphone"></i>
 
