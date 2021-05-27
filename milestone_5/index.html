@@ -56,7 +56,8 @@
                     <div class="c-search-bar pl-1 w100">
 
                         <i class="fas fa-search"> </i>
-                        <input type="text" v-model="userSearch" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" v-model="userSearch" @keyup="searchContact(userSearch)"
+                            placeholder="Cerca o inizia una nuova chat">
 
                     </div>
                     <!-- /Container-Search BAR  -->
@@ -65,8 +66,7 @@
                     <div class="contact-section pl-1 w100">
 
                         <div class="contact" v-for="(contact, index) in contacts"
-                            :class="(contact.name.toUpperCase().includes(userSearch.toUpperCase()))? '' : 'not-visible' "
-                            @click="checkCounter(index), infoContacts(index)">
+                            @click="checkCounter(index), infoContacts(index)" v-show="contact.visible">
                             <img v-bind:src="'./asset/IMG/avatar'+contact.avatar+ '.jpg'" class="user-avatar" alt="">
                             <p v-text="contact.name" class="user-info"></p>
                             <p id="info">{{contact.messages[contact.messages.length-1].date }}</p>
@@ -75,6 +75,7 @@
 
                     </div>
                     <!-- /CONTATTI  -->
+
                 </div>
             </aside>
 

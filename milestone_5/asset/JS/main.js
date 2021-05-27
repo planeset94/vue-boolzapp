@@ -209,7 +209,16 @@ const app = new Vue(
 
             },
 
-            infoContacts(index) {
+            searchContact(userSearch) {
+                const searchLower = userSearch.toLowerCase();
+                console.log(searchLower);
+                this.contacts.forEach(contact => {
+                    if (contact.name.toLowerCase().includes(searchLower)) {
+                        contact.visible = true
+                    } else {
+                        contact.visible = false
+                    }
+                });
 
             },
 
