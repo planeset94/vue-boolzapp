@@ -66,9 +66,10 @@
 
                         <div class="contact" v-for="(contact, index) in contacts"
                             :class="(contact.name.toUpperCase().includes(userSearch.toUpperCase()))? '' : 'not-visible' "
-                            @click="checkCounter(index),changeTime()">
+                            @click="checkCounter(index), infoContacts(index)">
                             <img v-bind:src="'./asset/IMG/avatar'+contact.avatar+ '.jpg'" class="user-avatar" alt="">
                             <p v-text="contact.name" class="user-info"></p>
+                            <p id="info">{{contact.messages[contact.messages.length-1].date }}</p>
 
                         </div>
 
@@ -85,7 +86,9 @@
                         <img :src="'./asset/IMG/avatar' +contacts[counter].avatar+ '.jpg'" class="user-avatar" alt="">
                         <div class="selected-info">
                             <p class="user-info">{{contacts[counter].name}}</p>
-                            <p class="time">{{lastTimeOnline}}</p>
+                            <p class="time">{{lastTimeOnline}}
+
+                            </p>
                         </div>
                     </div>
 
@@ -109,7 +112,7 @@
                             </div>
                             <div class="drop-menu" :class="(dropMenu===mindex) ? 'visible' : 'not-visible'">
                                 <p class="info-msg">Message info</p>
-                                <p @click="deleteMessage(mindex),changeTime()" class="delete-msg">Delete message</p>
+                                <p @click="deleteMessage(mindex)" class="delete-msg">Delete message</p>
                             </div>
                         </div>
 

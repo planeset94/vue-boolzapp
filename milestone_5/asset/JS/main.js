@@ -19,6 +19,7 @@ const app = new Vue(
             userSearch: '',
             dropMenu: '',
             lastTimeOnline: '',
+            dateInfo: '',
 
 
             contacts: [
@@ -109,7 +110,10 @@ const app = new Vue(
             ]
 
 
+
+
         },
+
 
 
         methods: {
@@ -174,34 +178,45 @@ const app = new Vue(
             },
 
             changeTime() {
-                let arrMess = this.contacts[this.counter].messages
-                const x = arrMess.filter(element => {
-                    if (element.status === 'received') {
-                        return true
-                    } else {
-                        return false
-                    }
-                });
-                // console.log(x);
-                let arrLeng = x.length
-                // console.log(arrLeng)
-                if (arrLeng !== 0) {
-                    this.lastTimeOnline = x[arrLeng - 1].date
-                } else {
-                    this.lastTimeOnline = '.....'
-                }
+                let d = this
+                setTimeout(function () {
 
-                console.log(this.lastTimeOnline);
+                    let arrMess = d.contacts[d.counter].messages
+                    const x = arrMess.filter(element => {
+                        if (element.status === 'received') {
+                            return true
+                        } else {
+                            return false
+                        }
+                    });
+                    console.log(x);
+                    let arrLeng = x.length
+                    console.log(arrLeng)
+                    if (arrLeng >= 1) {
+                        d.lastTimeOnline = x[arrLeng - 1].date
+                    } else {
+                        d.lastTimeOnline = '.....'
+                    }
+
+                    console.log(d.lastTimeOnline);
+
+
+
+
+
+                }, 1001);
+
 
             },
 
+            infoContacts(index) {
 
-
-
-
-
+            },
 
         },
+
+
+
         mounted() {
             this.addMessage()
 
